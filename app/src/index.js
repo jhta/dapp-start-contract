@@ -18,10 +18,7 @@ const App = {
         deployedNetwork.address
       );
 
-      console.log("the meta");
-      console.log("this meta", this.meta);
       const name = await this.meta.methods.name().call();
-      console.log("the name", name);
 
       // get accounts
       const accounts = await web3.eth.getAccounts();
@@ -49,7 +46,6 @@ const App = {
     const id = document.getElementById("lookid").value;
     const { lookUptokenIdToStarInfo } = this.meta.methods;
     const starName = await lookUptokenIdToStarInfo(id).call();
-    console.log("the star name", starName);
     App.setStatus("start name: " + starName);
   }
 };
